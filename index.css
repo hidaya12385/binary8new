@@ -27,6 +27,10 @@ body {
   position: relative;
 }
 
+body, html {
+  height: 100%;
+}
+
 /* ========================
    NETWORK BACKGROUND
 ======================== */
@@ -60,27 +64,21 @@ body {
   background: var(--black-bg);
   position: sticky;
   top: 0;
+  width: 100%;
   z-index: 10000;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-/* LOGO */
+/* LOGO LEFT-ALIGNED */
 .logo {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-right: auto; 
+  margin-right: auto; /* ensures it stays left */
 }
 
 .logo img {
-  width:60px;
+  width: 60px;
   height: 60px;
 }
 
@@ -161,7 +159,6 @@ body, html {
   margin-bottom: 10px;
 }
 
-/* Motto typing */
 #motto {
   color: var(--neon-pink);
   font-weight: 600;
@@ -251,16 +248,14 @@ body, html {
 /* ========================
    WHAT WE DO CARDS
 ======================== */
-* Cards container for What We Do */
 #what-we-do .cards {
   display: flex;
-  flex-wrap: wrap; /* Allow cards to wrap */
+  flex-wrap: wrap;
   gap: 20px;
 }
 
-/* Standard card */
 #what-we-do .card {
-  flex: 1 1 calc(33% - 20px); /* 3 cards per row, with gap */
+  flex: 1 1 200px; /* normal card size */
   background: rgba(0,0,0,0.45);
   padding: 30px;
   border-radius: 20px;
@@ -271,34 +266,14 @@ body, html {
   transition: 0.3s;
 }
 
-/* Only the Team Collaboration card is longer */
 #what-we-do .card.team-collab {
-  flex: 1 1 100%; /* Full width */
+  flex: 1 1 100%; /* team collaboration card full width */
 }
 
-/* Hover effect */
 #what-we-do .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 0 30px #ff6ec4;
 }
-
-/* Responsive */
-@media(max-width: 1024px){
-  #what-we-do .card {
-    flex: 1 1 48%; /* 2 per row */
-  }
-  #what-we-do .card.team-collab {
-    flex: 1 1 100%;
-  }
-}
-
-@media(max-width: 768px){
-  #what-we-do .card {
-    flex: 1 1 100%; /* stack vertically */
-  }
-}
-
-
 
 /* ========================
    EXPLORE MORE CARDS
@@ -310,7 +285,7 @@ body, html {
 }
 
 #explore-more .card {
-  flex: 1 1 calc(33.33% - 20px);
+  flex: 1 1 30%; /* normal card size */
   text-decoration: none;
   padding: 30px;
   border-radius: 20px;
@@ -453,6 +428,15 @@ footer {
 /* ========================
    RESPONSIVE
 ======================== */
+@media(max-width:1024px) {
+  #what-we-do .card {
+    flex: 1 1 48%;
+  }
+  #what-we-do .card.team-collab {
+    flex: 1 1 100%;
+  }
+}
+
 @media(max-width:768px) {
   .nav-links {
     display:none;
@@ -477,9 +461,8 @@ footer {
   #explore-more .cards {
     flex-direction: column;
   }
+  #what-we-do .card,
   #explore-more .card {
     flex: 1 1 100%;
   }
 }
-
-
