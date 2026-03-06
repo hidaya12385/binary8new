@@ -58,20 +58,18 @@ body, html {
 /* ========================
    NAVBAR
 ======================== */
+header{
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+}
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding: 18px 20px;
+  padding: 18px 60px;
   background: var(--black-bg);
-
-  position: sticky;   /* makes it always stick */
-  top: 0;
-  left: 0;
-  width: 100%;
-
-  z-index: 9999;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
@@ -486,6 +484,7 @@ footer {
     flex: 1 1 100%;
   }
 }
+
 
 
 
