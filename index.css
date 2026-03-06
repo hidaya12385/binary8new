@@ -10,7 +10,7 @@
 }
 
 /* ========================
-   GLOBAL
+   GLOBAL RESET
 ======================== */
 * {
   margin: 0;
@@ -21,7 +21,6 @@
 }
 
 html, body {
-  height: 100%;
   min-height: 100%;
   overflow-x: hidden;
   background: var(--black-bg);
@@ -37,7 +36,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* behind content */
+  z-index: -2;
 }
 
 .floating-shapes {
@@ -47,7 +46,7 @@ html, body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1; /* above canvas but behind navbar/content */
+  z-index: -1;
 }
 
 /* ========================
@@ -109,13 +108,12 @@ header {
   text-shadow: 0 0 8px var(--neon-pink);
 }
 
-/* HAMBURGER */
+/* HAMBURGER MENU */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  z-index: 10001; /* above everything for clicks */
 }
 
 .hamburger span {
@@ -125,15 +123,12 @@ header {
   transition: 0.3s;
 }
 
-/* Hamburger X animation */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
-
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
@@ -142,16 +137,16 @@ header {
    HERO
 ======================== */
 .hero {
-  position: relative;
-  z-index: 2; /* above floating shapes */
   min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
   padding: 40px;
   overflow: hidden;
+  z-index: 1;
 }
 
 .hero h1.hero-title {
@@ -185,8 +180,6 @@ header {
   margin-top: 25px;
   flex-wrap: wrap;
   justify-content: center;
-  z-index: 3;
-  position: relative;
 }
 
 .btn {
@@ -202,12 +195,12 @@ header {
 
 .btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px #ff6ec4;
+  box-shadow:0 0 25px #ff6ec4;
 }
 
 .btn-secondary {
   background: linear-gradient(45deg,#9b51e0,#2f80ed);
-  box-shadow: 0 0 15px #9b51e0;
+  box-shadow:0 0 15px #9b51e0;
 }
 
 /* ========================
@@ -216,7 +209,6 @@ header {
 .section {
   padding: 80px 60px;
   position: relative;
-  z-index: 2;
 }
 
 .section h2 {
@@ -455,20 +447,20 @@ footer {
 
 @media(max-width:768px) {
   .nav-links {
-    display:none;
-    flex-direction:column;
-    position:absolute;
-    top:80px;
-    right:0;
-    background:var(--black-bg);
-    width:220px;
-    padding:20px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: var(--black-bg);
+    width: 220px;
+    padding: 20px;
   }
   .nav-links.active {
-    display:flex;
+    display: flex;
   }
   .hamburger {
-    display:flex;
+    display: flex;
   }
   .mission-vision {
     flex-direction: column;
@@ -481,4 +473,4 @@ footer {
   #explore-more .card {
     flex: 1 1 100%;
   }
-}
+   }
