@@ -26,11 +26,16 @@ body {
   overflow-x: hidden;
 }
 
-body, html {
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
-  height: auto; 
-  overflow-x: hidden;
 }
 
 /* ========================
@@ -146,7 +151,6 @@ header{
    HERO
 ======================== */
 .hero {
-  margin-top: 100px;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -156,8 +160,8 @@ header{
   position: relative;
   padding: 40px;
   overflow: hidden;
+  z-index: 1;
 }
-
 
 .hero h1.hero-title {
   font-size: 70px;
@@ -484,6 +488,7 @@ footer {
     flex: 1 1 100%;
   }
 }
+
 
 
 
