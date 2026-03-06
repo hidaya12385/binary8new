@@ -73,7 +73,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 60px;
+  padding: 18px 10px;
   background: var(--black-bg);
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
@@ -488,6 +488,7 @@ footer {
     flex: 1 1 100%;
   }
 }
+
 
 
 
