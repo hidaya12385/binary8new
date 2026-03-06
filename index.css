@@ -10,7 +10,7 @@
 }
 
 /* ========================
-   GLOBAL
+   GLOBAL STYLES
 ======================== */
 * {
   margin: 0;
@@ -20,22 +20,12 @@
   scroll-behavior: smooth;
 }
 
-body {
+html, body {
+  height: 100%;
   background: var(--black-bg);
   color: white;
   overflow-x: hidden;
-}
-
-html {
-  height: 100%;
-  overflow-x: hidden;
-}
-
-body {
   min-height: 100%;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
 }
 
 /* ========================
@@ -63,9 +53,10 @@ body {
 /* ========================
    NAVBAR
 ======================== */
-header{
+header {
   position: sticky;
   top: 0;
+  width: 100%;
   z-index: 10000;
 }
 
@@ -73,9 +64,10 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 10px;
+  padding: 18px 60px;
   background: var(--black-bg);
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  z-index: 10001;
 }
 
 /* LOGO LEFT-ALIGNED */
@@ -119,12 +111,13 @@ header{
   text-shadow: 0 0 8px var(--neon-pink);
 }
 
-/* HAMBURGER */
+/* HAMBURGER MENU */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  z-index: 10002;
 }
 
 .hamburger span {
@@ -134,7 +127,6 @@ header{
   transition: 0.3s;
 }
 
-/* Hamburger X animation */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -148,7 +140,7 @@ header{
 }
 
 /* ========================
-   HERO
+   HERO SECTION
 ======================== */
 .hero {
   min-height: 90vh;
@@ -209,12 +201,12 @@ header{
 
 .btn:hover {
   transform: scale(1.05);
-  box-shadow:0 0 25px #ff6ec4;
+  box-shadow: 0 0 25px #ff6ec4;
 }
 
 .btn-secondary {
   background: linear-gradient(45deg,#9b51e0,#2f80ed);
-  box-shadow:0 0 15px #9b51e0;
+  box-shadow: 0 0 15px #9b51e0;
 }
 
 /* ========================
@@ -270,14 +262,16 @@ header{
 /* ========================
    WHAT WE DO CARDS
 ======================== */
-#what-we-do .cards {
+#what-we-do .cards,
+#explore-more .cards {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-#what-we-do .card {
-  flex: 1 1 200px; /* normal card size */
+#what-we-do .card,
+#explore-more .card {
+  flex: 1 1 200px;
   background: rgba(0,0,0,0.45);
   padding: 30px;
   border-radius: 20px;
@@ -289,37 +283,13 @@ header{
 }
 
 #what-we-do .card.team-collab {
-  flex: 1 1 100%; /* team collaboration card full width */
+  flex: 1 1 100%;
 }
 
-#what-we-do .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 30px #ff6ec4;
-}
-
-/* ========================
-   EXPLORE MORE CARDS
-======================== */
-#explore-more .cards {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-#explore-more .card {
-  flex: 1 1 30%; /* normal card size */
-  text-decoration: none;
-  padding: 30px;
-  border-radius: 20px;
-  background: rgba(0,0,0,0.45);
-  text-align: center;
-  box-shadow: 0 0 15px #42e695;
-  transition: 0.3s;
-}
-
+#what-we-do .card:hover,
 #explore-more .card:hover {
   transform: translateY(-10px);
-  box-shadow:0 0 30px #ff6ec4;
+  box-shadow: 0 0 30px #ff6ec4;
 }
 
 /* ========================
@@ -461,39 +431,33 @@ footer {
 
 @media(max-width:768px) {
   .nav-links {
-    display:none;
-    flex-direction:column;
-    position:absolute;
-    top:80px;
-    right:0;
-    background:var(--black-bg);
-    width:220px;
-    padding:20px;
-  }
-  .nav-links.active {
-    display:flex;
-  }
-  .hamburger {
-    display:flex;
-  }
-  .mission-vision {
+    display: none;
     flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: var(--black-bg);
+    width: 220px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
   }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mission-vision,
   #what-we-do .cards,
   #explore-more .cards {
     flex-direction: column;
   }
+
   #what-we-do .card,
   #explore-more .card {
     flex: 1 1 100%;
   }
 }
-
-
-
-
-
-
-
-
-
