@@ -59,17 +59,19 @@ body, html {
 /* ========================
    NAVBAR
 ======================== */
-.navbar {
+.navbar{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 18px 60px;
-  background: var(--black-bg);
+
   position: sticky;
   top: 0;
-  width: 100%;
-  z-index: 10000;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+
+  background: rgba(15,15,46,0.95);
+  backdrop-filter: blur(8px);
+
+  z-index: 99999;
 }
 
 /* LOGO LEFT-ALIGNED */
@@ -482,5 +484,6 @@ footer {
     flex: 1 1 100%;
   }
 }
+
 
 
