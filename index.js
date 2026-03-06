@@ -1,476 +1,306 @@
-/* ========================
-   ROOT VARIABLES
-======================== */
-:root {
-  --black-bg: #0f0f2e;
-  --neon-pink: #ff6ec4;
-  --neon-blue: #2f80ed;
-  --neon-purple: #9b51e0;
-  --white-trans: rgba(255,255,255,0.8);
-}
+/* =========================
 
-/* ========================
-   GLOBAL RESET
-======================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
-}
+HAMBURGER MENU
 
-html, body {
-  min-height: 100%;
-  overflow-x: hidden;
-  background: var(--black-bg);
-  color: white;
-}
+========================= */
 
-/* ========================
-   NETWORK BACKGROUND
-======================== */
-#network-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-}
 
-.floating-shapes {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
 
-/* ========================
-   NAVBAR
-======================== */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10000;
-}
+const hamburger = document.getElementById('hamburger');
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 60px;
-  background: var(--black-bg);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-}
+const navLinks = document.querySelector('.nav-links');
 
-/* LOGO LEFT-ALIGNED */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
 
-.logo img {
-  width: 60px;
-  height: 60px;
-}
 
-.logo-text h2 {
-  font-size: 26px;
-  font-weight: 700;
-}
+hamburger.addEventListener('click', () => {
 
-.logo-text .motto-small {
-  font-size: 12px;
-  color: var(--neon-pink);
-}
+  navLinks.classList.toggle('active');
 
-/* NAV LINKS */
-.nav-links {
-  display: flex;
-  gap: 26px;
-  list-style: none;
-}
+  hamburger.classList.toggle('active'); // this triggers the X animation
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
+});
 
-.nav-links a:hover {
-  color: var(--neon-pink);
-  text-shadow: 0 0 8px var(--neon-pink);
-}
 
-/* HAMBURGER MENU */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
 
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: white;
-  transition: 0.3s;
-}
 
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
 
-/* ========================
-   HERO
-======================== */
-.hero {
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  padding: 40px;
-  overflow: hidden;
-  z-index: 1;
-}
 
-.hero h1.hero-title {
-  font-size: 70px;
-  font-weight: 800;
-  margin-bottom: 15px;
-  transition: 0.3s;
-}
 
-.hero h1.hero-title:hover {
-  color: var(--neon-pink);
-  text-shadow: 0 0 20px var(--neon-pink);
-}
+/* =========================
 
-.tagline {
-  font-size: 22px;
-  color: var(--white-trans);
-  margin-bottom: 10px;
-}
+MOTTO TYPE EFFECT
 
-#motto {
-  color: var(--neon-pink);
-  font-weight: 600;
-  font-size: 20px;
-}
+========================= */
 
-/* HERO BUTTONS */
-.hero-buttons {
-  display: flex;
-  gap: 20px;
-  margin-top: 25px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 
-.btn {
-  padding: 14px 30px;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  color: white;
-  background: linear-gradient(45deg,#42e695,#ff6ec4);
-  box-shadow: 0 0 15px #42e695;
-  transition: 0.3s;
-}
 
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow:0 0 25px #ff6ec4;
-}
+const mottoText = "Code it. Fix it. Slay it.";
 
-.btn-secondary {
-  background: linear-gradient(45deg,#9b51e0,#2f80ed);
-  box-shadow:0 0 15px #9b51e0;
-}
+const mottoElement = document.getElementById("motto");
 
-/* ========================
-   SECTIONS
-======================== */
-.section {
-  padding: 80px 60px;
-  position: relative;
-}
 
-.section h2 {
-  font-size: 38px;
-  margin-bottom: 20px;
-  display: inline-block;
-  transition: 0.3s;
-}
 
-.section h2:hover {
-  color: var(--neon-pink);
-  text-shadow: 0 0 12px var(--neon-pink);
-}
+let i = 0;
 
-.section p {
-  font-size: 18px;
-  line-height: 1.7;
-  color: var(--white-trans);
-  margin-bottom: 30px;
-}
 
-/* ========================
-   MISSION / VISION
-======================== */
-.mission-vision {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
 
-.box {
-  flex: 1 1 250px;
-  background: rgba(0,0,0,0.35);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 0 18px #42e695;
-  transition: 0.3s;
-}
+function typeMotto() {
 
-.box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 30px #ff6ec4;
-}
+  if (i < mottoText.length) {
 
-/* ========================
-   WHAT WE DO CARDS
-======================== */
-#what-we-do .cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+    mottoElement.innerHTML += mottoText.charAt(i);
 
-#what-we-do .card {
-  flex: 1 1 200px;
-  background: rgba(0,0,0,0.45);
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 0 15px #42e695;
-  transition: 0.3s;
-}
+    i++;
 
-#what-we-do .card.team-collab {
-  flex: 1 1 100%;
-}
+    setTimeout(typeMotto, 70);
 
-#what-we-do .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 30px #ff6ec4;
-}
-
-/* ========================
-   EXPLORE MORE CARDS
-======================== */
-#explore-more .cards {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-#explore-more .card {
-  flex: 1 1 30%;
-  text-decoration: none;
-  padding: 30px;
-  border-radius: 20px;
-  background: rgba(0,0,0,0.45);
-  text-align: center;
-  box-shadow: 0 0 15px #42e695;
-  transition: 0.3s;
-}
-
-#explore-more .card:hover {
-  transform: translateY(-10px);
-  box-shadow:0 0 30px #ff6ec4;
-}
-
-/* ========================
-   PARTNER SECTION
-======================== */
-#partner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
-}
-
-#partner .partner-btn {
-  margin-top: 15px;
-}
-
-/* ========================
-   SOCIAL ICONS
-======================== */
-.footer-social {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-}
-
-.footer-social a {
-  font-size: 32px;
-  color: white;
-  transition: 0.3s;
-}
-
-.footer-social a:hover {
-  color: var(--neon-pink);
-  transform: scale(1.2);
-  text-shadow: 0 0 15px var(--neon-pink);
-}
-
-/* ========================
-   FOOTER
-======================== */
-footer {
-  padding: 40px 60px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-links {
-  display: flex;
-  gap: 22px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.footer-links a:hover {
-  color: var(--neon-pink);
-}
-
-/* ========================
-   QUICK CONTACT FORM
-======================== */
-.quick-form-container {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.quick-form {
-  background: rgba(0,0,0,0.7);
-  padding: 40px;
-  border-radius: 20px;
-  width: 90%;
-  max-width: 420px;
-  box-shadow: 0 0 25px #42e695;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.quick-form h2 {
-  text-align: center;
-}
-
-.quick-subtext {
-  font-size: 14px;
-  text-align: center;
-  opacity: 0.8;
-}
-
-.quick-form input,
-.quick-form textarea {
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.2);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  outline: none;
-}
-
-.quick-form input:focus,
-.quick-form textarea:focus {
-  border-color: #ff6ec4;
-  box-shadow: 0 0 10px #ff6ec4;
-}
-
-.back-home {
-  text-align: center;
-  margin-top: 10px;
-  text-decoration: none;
-  color: white;
-}
-
-.back-home:hover {
-  color: #ff6ec4;
-}
-
-/* ========================
-   RESPONSIVE
-======================== */
-@media(max-width:1024px) {
-  #what-we-do .card {
-    flex: 1 1 48%;
   }
-  #what-we-do .card.team-collab {
-    flex: 1 1 100%;
-  }
+
 }
 
-@media(max-width:768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    right: 0;
-    background: var(--black-bg);
-    width: 220px;
-    padding: 20px;
-  }
-  .nav-links.active {
-    display: flex;
-  }
-  .hamburger {
-    display: flex;
-  }
-  .mission-vision {
-    flex-direction: column;
-  }
-  #what-we-do .cards,
-  #explore-more .cards {
-    flex-direction: column;
-  }
-  #what-we-do .card,
-  #explore-more .card {
-    flex: 1 1 100%;
-  }
+
+
+window.addEventListener("load", typeMotto);
+
+
+
+
+
+
+
+/* =========================
+
+NETWORK BACKGROUND
+
+========================= */
+
+
+
+const canvas = document.createElement("canvas");
+
+canvas.id = "network-bg";
+
+document.body.appendChild(canvas);
+
+
+
+const ctx = canvas.getContext("2d");
+
+
+
+canvas.width = window.innerWidth;
+
+canvas.height = window.innerHeight;
+
+
+
+window.addEventListener("resize", () => {
+
+  canvas.width = window.innerWidth;
+
+  canvas.height = window.innerHeight;
+
+});
+
+
+
+let nodes = [];
+
+const nodeCount = 80;
+
+
+
+for (let i = 0; i < nodeCount; i++) {
+
+  nodes.push({
+
+    x: Math.random() * canvas.width,
+
+    y: Math.random() * canvas.height,
+
+    vx: (Math.random() - 0.5) * 0.6,
+
+    vy: (Math.random() - 0.5) * 0.6
+
+  });
+
 }
+
+
+
+function animateNetwork() {
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+
+  for (let i = 0; i < nodes.length; i++) {
+
+
+
+    let n = nodes[i];
+
+
+
+    n.x += n.vx;
+
+    n.y += n.vy;
+
+
+
+    if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+
+    if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+
+
+
+    ctx.beginPath();
+
+    ctx.arc(n.x, n.y, 2, 0, Math.PI * 2);
+
+    ctx.fillStyle = "#ff6ec4";
+
+    ctx.fill();
+
+
+
+
+
+    for (let j = i + 1; j < nodes.length; j++) {
+
+
+
+      let dx = n.x - nodes[j].x;
+
+      let dy = n.y - nodes[j].y;
+
+      let dist = Math.sqrt(dx * dx + dy * dy);
+
+
+
+      if (dist < 120) {
+
+        ctx.beginPath();
+
+        ctx.moveTo(n.x, n.y);
+
+        ctx.lineTo(nodes[j].x, nodes[j].y);
+
+        ctx.strokeStyle = "rgba(255,255,255,0.15)";
+
+        ctx.stroke();
+
+      }
+
+    }
+
+  }
+
+
+
+  requestAnimationFrame(animateNetwork);
+
+}
+
+
+
+animateNetwork();
+
+
+
+
+
+
+
+/* =========================
+
+FLOATING SHAPES
+
+========================= */
+
+
+
+const shapesContainer = document.createElement("div");
+
+shapesContainer.className = "floating-shapes";
+
+document.body.appendChild(shapesContainer);
+
+
+
+const shapes = ["circle", "square", "triangle"];
+
+
+
+for (let i = 0; i < 18; i++) {
+
+
+
+  let shape = document.createElement("div");
+
+
+
+  shape.className = "shape " + shapes[Math.floor(Math.random() * shapes.length)];
+
+
+
+  shape.style.left = Math.random() * 100 + "%";
+
+  shape.style.top = Math.random() * 100 + "%";
+
+  shape.style.animationDuration = 10 + Math.random() * 20 + "s";
+
+
+
+  shapesContainer.appendChild(shape);
+
+}
+
+
+
+
+
+
+
+/* =========================
+
+SMOOTH SCROLL FOR HERO BUTTONS
+
+========================= */
+
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+
+
+  anchor.addEventListener("click", function(e) {
+
+
+
+    e.preventDefault();
+
+
+
+    const target = document.querySelector(this.getAttribute("href"));
+
+
+
+    if (target) {
+
+      target.scrollIntoView({
+
+        behavior: "smooth"
+
+      });
+
+    }
+
+
+
+  });
+
+
+
+});
+
