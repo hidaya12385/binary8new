@@ -24,7 +24,6 @@ body {
   background: var(--black-bg);
   color: white;
   overflow-x: hidden;
-  position: relative;
 }
 
 body, html {
@@ -59,19 +58,21 @@ body, html {
 /* ========================
    NAVBAR
 ======================== */
-.navbar{
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 10px;
 
-  position: sticky;
+  padding: 18px 20px;
+  background: var(--black-bg);
+
+  position: fixed;   /* makes it always stick */
   top: 0;
+  left: 0;
+  width: 100%;
 
-  background: rgba(15,15,46,0.95);
-  backdrop-filter: blur(8px);
-
-  z-index: 99999;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 /* LOGO LEFT-ALIGNED */
@@ -147,6 +148,7 @@ body, html {
    HERO
 ======================== */
 .hero {
+  margin-top: 100px;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -157,6 +159,7 @@ body, html {
   padding: 40px;
   overflow: hidden;
 }
+
 
 .hero h1.hero-title {
   font-size: 70px;
@@ -483,6 +486,7 @@ footer {
     flex: 1 1 100%;
   }
 }
+
 
 
 
