@@ -1,6 +1,4 @@
-/* =========================
-   HAMBURGER MENU
-========================= */
+/* HAMBURGER MENU */
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -9,9 +7,7 @@ hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active'); // triggers X animation
 });
 
-/* =========================
-   MOTTO TYPE EFFECT
-========================= */
+/* MOTTO TYPE EFFECT */
 const mottoText = "Code it. Fix it. Slay it.";
 const mottoElement = document.getElementById("motto");
 let i = 0;
@@ -26,9 +22,7 @@ function typeMotto() {
 
 window.addEventListener("load", typeMotto);
 
-/* =========================
-   NETWORK BACKGROUND
-========================= */
+/* NETWORK BACKGROUND */
 const canvas = document.getElementById("network-bg");
 const ctx = canvas.getContext("2d");
 
@@ -87,9 +81,7 @@ function animateNetwork() {
 }
 animateNetwork();
 
-/* =========================
-   FLOATING SHAPES
-========================= */
+/* FLOATING SHAPES */
 const shapesContainer = document.querySelector(".floating-shapes");
 
 const shapes = ["circle", "square", "triangle"];
@@ -102,9 +94,7 @@ for (let i = 0; i < 18; i++) {
   shapesContainer.appendChild(shape);
 }
 
-/* =========================
-   SMOOTH SCROLL FOR HERO BUTTONS & NAV LINKS
-========================= */
+/* SMOOTH SCROLL FOR HERO BUTTONS & NAV LINKS */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function(e) {
     e.preventDefault();
@@ -119,3 +109,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
