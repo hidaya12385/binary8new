@@ -1,6 +1,4 @@
-/* ========================
-   ROOT VARIABLES
-======================== */
+/* ROOT VARIABLES */
 :root {
   --black-bg: #0f0f2e;
   --neon-pink: #ff6ec4;
@@ -9,9 +7,7 @@
   --white-trans: rgba(255,255,255,0.8);
 }
 
-/* ========================
-   GLOBAL
-======================== */
+/* GLOBAL */
 * {
   margin: 0;
   padding: 0;
@@ -32,9 +28,7 @@ html {
   overflow-x: hidden;
 }
 
-/* ========================
-   NETWORK BACKGROUND
-======================== */
+/* NETWORK BACKGROUND */
 #network-bg {
   position: fixed;
   top: 0;
@@ -55,9 +49,7 @@ html {
   z-index: -1;
 }
 
-/* ========================
-   NAVBAR
-======================== */
+/* NAVBAR */
 header {
   position: sticky;
   top: 0;
@@ -145,9 +137,7 @@ header {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ========================
-   HERO
-======================== */
+/* HERO */
 .hero {
   min-height: 90vh;
   display: flex;
@@ -218,9 +208,7 @@ header {
   box-shadow: 0 0 15px #9b51e0;
 }
 
-/* ========================
-   SECTIONS
-======================== */
+/* SECTIONS */
 .section {
   padding: 80px 60px;
   position: relative;
@@ -246,9 +234,7 @@ header {
   margin-bottom: 30px;
 }
 
-/* ========================
-   MISSION / VISION
-======================== */
+/* MISSION / VISION */
 .mission-vision {
   display: flex;
   gap: 20px;
@@ -269,9 +255,7 @@ header {
   box-shadow: 0 0 30px #ff6ec4;
 }
 
-/* ========================
-   WHAT WE DO CARDS
-======================== */
+/* WHAT WE DO CARDS */
 #what-we-do .cards {
   display: flex;
   flex-wrap: wrap;
@@ -301,9 +285,7 @@ header {
   box-shadow: 0 0 30px #ff6ec4;
 }
 
-/* ========================
-   EXPLORE MORE CARDS
-======================== */
+/* EXPLORE MORE CARDS */
 #explore-more .cards {
   display: flex;
   gap: 20px;
@@ -328,9 +310,7 @@ header {
   box-shadow: 0 0 30px #ff6ec4;
 }
 
-/* ========================
-   PARTNER SECTION
-======================== */
+/* PARTNER SECTION */
 #partner {
   display: flex;
   flex-direction: column;
@@ -344,9 +324,7 @@ header {
   margin-top: 15px;
 }
 
-/* ========================
-   SOCIAL ICONS
-======================== */
+/* SOCIAL ICONS */
 .footer-social {
   margin-top: 20px;
   display: flex;
@@ -366,9 +344,7 @@ header {
   text-shadow: 0 0 15px var(--neon-pink);
 }
 
-/* ========================
-   FOOTER
-======================== */
+/* FOOTER */
 footer {
   padding: 40px 60px;
   text-align: center;
@@ -395,9 +371,7 @@ footer {
   color: var(--neon-pink);
 }
 
-/* ========================
-   QUICK CONTACT FORM
-======================== */
+/* QUICK CONTACT FORM */
 .quick-form-container {
   height: 100vh;
   display: flex;
@@ -455,9 +429,7 @@ footer {
   color: #ff6ec4;
 }
 
-/* ========================
-   RESPONSIVE
-======================== */
+/* RESPONSIVE */
 @media(max-width:1024px) {
   #what-we-do .card {
     flex: 1 1 48%;
@@ -496,3 +468,4 @@ footer {
     flex: 1 1 100%;
   }
 }
+
